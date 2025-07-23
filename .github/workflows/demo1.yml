@@ -5,7 +5,18 @@ on:
       - opened
       - synchronize
       - reopened
+    branches:
+      - master
+      - 'dev-*'
+      - 'feature/**'
   workflow_dispatch:
+  push:
+    branches:
+      - master
+      - 'dev-*'
+      - 'feature/**'
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
